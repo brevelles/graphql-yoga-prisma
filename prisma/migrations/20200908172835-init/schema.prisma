@@ -1,0 +1,18 @@
+// Data source: Specifies your database connection.
+datasource db {
+  provider = "sqlite"
+  url = "***"
+}
+
+// Generator: Indicates that you want to genenerate Prisma Client.
+generator client {
+  provider = "prisma-client-js"
+}
+
+// Data model: Defines your application models. Each model will be mapped to a table in the underlying database.
+model Link {
+  id          Int      @id @default(autoincrement())
+  createdAt   DateTime @default(now())
+  description String
+  url         String
+}
